@@ -1,9 +1,13 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  purge: [
+    // Paths to your HTML/JS files that are using Tailwind classes
+    "./src/**/*.html",
+    "./src/**/*.js",
+  ],
+  darkMode: "class", // or 'media' or 'class'
   theme: {
-    extend: {},
+    
   },
   variants: {},
-  plugins: [],
-}
+  plugins: [require("daisyui")],
+};
