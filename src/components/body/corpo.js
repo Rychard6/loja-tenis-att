@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdLocationPin } from "react-icons/md";
 
 export default function Corpo() {
     // Mock data for products
@@ -6,82 +7,82 @@ export default function Corpo() {
         {
             name: 'tenis',
             image: '../imagens/tenis.jpg',
-            price: '$19.99'
+            location: 'ceilandia'
         },
         {
             name: 'Product 2',
             image: 'tenis',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'Product 1',
             image: 'image-url-1.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'tenis.jpg',
             image: '../imagens/tenis.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'Product 1',
             image: 'image-url-1.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'tenis.jpg',
             image: '../imagens/tenis.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'Product 1',
             image: 'image-url-1.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'tenis.jpg',
             image: '../imagens/tenis.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: '$29.99'
         },
         {
             name: 'Product 1',
             image: 'image-url-1.jpg',
-            price: '$19.99'
+            location: '$19.99'
         },
         {
             name: 'Product 2',
             image: 'image-url-2.jpg',
-            price: '$29.99'
+            location: 'Samambaia'
         },
         // ... add more products
     ];
@@ -91,8 +92,13 @@ export default function Corpo() {
             {products.map((product, index) => (
                 <div key={index} className="bg-white p-4 shadow-md rounded-md">
                     <img src={product.image} alt={product.name} className="w-full h-60 object-cover mb-2" />
-                    <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
-                    <p className="text-gray-600">{product.price}</p>
+                    <div className='flex items-center justify-center'>
+                        <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
+                    </div>
+                    <div className='flex items-center justify-center'>
+                        <MdLocationPin />
+                        <p className="text-gray-600">{product.location}</p>
+                    </div>
                 </div>
             ))}
         </div>
