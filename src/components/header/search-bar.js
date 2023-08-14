@@ -16,7 +16,7 @@ export default function Search() {
   return (
     <div className="relative group">
       <input
-        className={`w-80 py-2 border rounded-md focus:ring focus:border-blue-300 ${
+        className={` w-80 py-2 border rounded-md focus:ring focus:border-blue-300 ${
           isHovered || inputValue ? "opacity-100" : "opacity-0"
         } focus:text-black transition-opacity duration-300`}
         type="text"
@@ -36,7 +36,7 @@ export default function Search() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <TfiSearch className="text-black font-weight-bold text-xl w-6 h-6" />
+        <TfiSearch className="text-white font-weight-bold text-xl w-6 h-6" />
       </div>
       <a className="" href="#"></a>
     </div>

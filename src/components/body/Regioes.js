@@ -10,13 +10,13 @@ export default function Regioes() {
     ];
 
     const buttons = locations.map((location, index) => (
-        <button key={index} className="btn w-40 h-12 m-1 border border-white bg-black text-white hover:text-black">
+        <button key={index} className="btn w-40 h-12 m-1 border-white bg-black text-white hover:text-black hover:border-pink-500 hover: border-3 ">
             {location}
         </button>
     ));
 
     return (
-      <div className="flex flex-wrap mt-20 mx-auto text-center rounded-md shadow bg-black justify-center " style={{ width: '75%' }}>
+      <div className="flex flex-wrap pt-36 mx-auto text-center rounded-md shadow  justify-center " style={{ width: '75%' }}>
           {buttons}
       </div>
     );
