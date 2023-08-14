@@ -16,7 +16,7 @@ export default function Search() {
   return (
     <div className="relative group">
       <input
-        className={` w-80 py-2 border rounded-md focus:ring focus:border-blue-300 ${
+        className={` w-80 py-2 border-hb rounded-md focus:ring focus:border-bh   ${
           isHovered || inputValue ? "opacity-100" : "opacity-0"
         } focus:text-black transition-opacity duration-300`}
         type="text"
@@ -33,12 +33,12 @@ export default function Search() {
       />
       <div
         className={"border-ligth:bg-slate-100 rounded-full w-10 h-10 absolute top-1/2 right-2 transform -translate-y-1/2 cursor-pointer flex items-center justify-center"}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
-        <TfiSearch className="text-white font-weight-bold text-xl w-6 h-6" />
+        <TfiSearch className={`text-white font-weight-bold text-xl w-6 h-6 ${isHovered || inputValue ? 'text-red-500' : ''}`} 
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+        />
       </div>
-      <a className="" href="#"></a>
     </div>
   );
 }
