@@ -9,7 +9,7 @@ export default function Menu() {
                     <button className="btn w-40 hover:bg-hb">Travesti</button>
                     <button className="btn w-40 hover:bg-hb">Anuncie</button>
                     <button className="btn w-40 hover:bg-hb">Vips</button>
-                    <button className="btn w-40 hover:bg-hb">Bate Papo</button>
+                    <button className="btn w-40 hover:bg-hb">Sobre</button>
                 </div>
             </div>
         </div>

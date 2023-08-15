@@ -1,14 +1,12 @@
 import React from 'react';
-import NavBar from './components/header/navBar';
-import Body from './components/body';
-import Footer from './components/footer';
+import Index from './components/pages';
+import Sobre from './components/pages/sobre';
+import Detalhes from './components/pages/detalhes';
 
 function App() {
   return (
     <>
-    <NavBar />
-    <Body />
-    <Footer />
+    <Detalhes />
     </>
   );
 }

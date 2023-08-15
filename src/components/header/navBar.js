@@ -13,7 +13,7 @@ export default function NavBar(){
     
     return(
         <>
-        <div className="fixed top-0 left-0 w-full bg-nav text-neutral-content flex justify-between items-center p-4">
+        <div className="fixed top-0 left-0 w-full bg-nav text-neutral-content flex justify-between items-center p-4 z-50">
             <div className="fixed flex items-center space-x-4">
                 <div className="dropdown">
 

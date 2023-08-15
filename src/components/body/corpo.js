@@ -20,69 +20,9 @@ export default function Corpo() {
             location: '$19.99'
         },
         {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: '$29.99'
-        },
-        {
-            name: 'tenis.jpg',
-            image: '../imagens/tenis.jpg',
-            location: '$19.99'
-        },
-        {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: '$29.99'
-        },
-        {
             name: 'Product 1',
             image: 'image-url-1.jpg',
             location: '$19.99'
-        },
-        {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: '$29.99'
-        },
-        {
-            name: 'tenis.jpg',
-            image: '../imagens/tenis.jpg',
-            location: '$19.99'
-        },
-        {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: '$29.99'
-        },
-        {
-            name: 'Product 1',
-            image: 'image-url-1.jpg',
-            location: '$19.99'
-        },
-        {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: '$29.99'
-        },
-        {
-            name: 'tenis.jpg',
-            image: '../imagens/tenis.jpg',
-            location: '$19.99'
-        },
-        {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: '$29.99'
-        },
-        {
-            name: 'Product 1',
-            image: 'image-url-1.jpg',
-            location: '$19.99'
-        },
-        {
-            name: 'Product 2',
-            image: 'image-url-2.jpg',
-            location: 'Samambaia'
         },
         // ... add more products
     ];
