@@ -1,4 +1,34 @@
+import React, { useState } from 'react';
+import Modal from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
+import { IoCallOutline, IoLogoWhatsapp } from "react-icons/io5";
+
 export default function CorpoDetalhes(){
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalImage, setModalImage] = useState('');
+    const images = [
+      './tenis.jpg',
+      'caminho/para/imagem2.jpg',
+      'caminho/para/imagem3.jpg',
+      'caminho/para/imagem4.jpg',
+      'caminho/para/imagem5.jpg',
+      'caminho/para/imagem6.jpg',
+      'caminho/para/imagem7.jpg',
+      'caminho/para/imagem8.jpg'
+    ];
+  
+    const openModal = (image) => {
+      setModalImage(image);
+      setModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setModalImage('');
+      setModalOpen(false);
+    };
+  
+
     return(
         <>
         <div className="block pt-40 pl-16 min-h-screen justify-center">
@@ -69,34 +99,35 @@ export default function CorpoDetalhes(){
                 {/*imagens*/}
                 <div className="flex justify-center items-center w-1/2 ">
                 <div className="grid grid-cols-4 gap-4">
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem1.jpg" alt="Imagem 1" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem2.jpg" alt="Imagem 2" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem3.jpg" alt="Imagem 3" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem4.jpg" alt="Imagem 4" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem5.jpg" alt="Imagem 5" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem6.jpg" alt="Imagem 6" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem7.jpg" alt="Imagem 7" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden">
-                        <img src="caminho/para/imagem8.jpg" alt="Imagem 8" className="w-full h-full object-cover" />
-                    </div>
+                {images.map((image, index) => (
+                <div
+                    key={index}
+                    className="h-36 w-28 bg-white border-none rounded-lg overflow-hidden"
+                    onClick={() => openModal(image)}
+                >
+                    <img src={image} alt={`Imagem ${index}`} className="w-full h-full object-cover cursor-pointer" />
+                </div>
+                ))}
+                </div>
+                <Modal open={modalOpen} onClose={closeModal} center>
+                    <img src={modalImage} alt="Imagem Ampliada" className="max-h-screen mx-auto" />
+                </Modal>
                 </div>
 
-                </div>
+            </div>
 
+        {/**Area comentarios */}
+            <div className='flex justify-center items-center mt-16 mb-40'>
+                <div className='w-auto h-auto'>
+                    <button className="w-34 text-white bg-pink-600 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4">
+                        <IoCallOutline className='text-center text-3xl ml-10'/>
+                        Me ligue agora
+                    </button>
+                    <button className="w-34 text-white  bg-green-700 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4">
+                        <IoLogoWhatsapp className='text-3xl ml-10' />
+                        Conversar agora
+                    </button>
+                </div>
             </div>
         </div>
         </>
