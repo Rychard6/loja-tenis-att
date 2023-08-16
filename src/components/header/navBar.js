@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SearchBar from './search-bar'
 import banner from "../imagens/banner.png";

@@ -5,9 +5,9 @@ import CorpoAnuncie from "./anuncie/corpoAnuncie";
 export default function Anuncie(){
     return(
         <>
-        <NavBar />
+
         <CorpoAnuncie /> 
-        <Footer />
+
         </>
     );
 }

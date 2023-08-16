@@ -1,13 +1,14 @@
 import React from 'react';
-import Index from './components/pages';
-import Sobre from './components/pages/sobre';
-import Detalhes from './components/pages/detalhes';
-import Anuncie from './components/pages/anuncie';
+import NavBar from './components/header/navBar';
+import Footer from './components/footer';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-    <Detalhes />
+    <NavBar />
+    <Outlet />
+    <Footer />
     </>
   );
 }

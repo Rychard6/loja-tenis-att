@@ -5,9 +5,9 @@ import CorpoDetalhes from "./detalhes/corpoDetalhes";
 export default function Detalhes(){
     return(
         <>
-        <NavBar />
+
         <CorpoDetalhes /> 
-        <Footer />
+
         </>
     );
 }

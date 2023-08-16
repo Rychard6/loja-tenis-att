@@ -5,9 +5,9 @@ import Footer from '../footer/index';
 export default function Index(){
     return(
         <>
-        <NavBar />
+
         <Body />
-        <Footer />
+
         </>
     );
 }
