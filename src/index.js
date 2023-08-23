@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         errorElement: <Home />,
         children:[
             {
-                path: "/",
+                path: "/home/:type",
                 element: <Home />,
             },
             {
@@ -33,7 +33,8 @@ const router = createBrowserRouter([
             {
                 path: "/acompanhante/:id",
                 element: <Detalhes />,
-            }
+            },
+            
         ],
 
     },

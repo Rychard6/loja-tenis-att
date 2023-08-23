@@ -17,7 +17,7 @@ export default function CorpoAnuncie() {
     return (
       <>
         <div className="flex justify-center pt-40">
-          <div className="relative w-2/4 h-60 border rounded-md bg-white">
+          <div className="w-full h-52 relative sm:w-2/4 sm:h-60 border rounded-md bg-white">
             <img
               src="caminho/para/sua/imagem.jpg"
               alt="Imagem"
@@ -25,10 +25,10 @@ export default function CorpoAnuncie() {
             />
           </div>
         </div>
-        <div className="flex justify-center pt-32 pb-40">
+        <div className="flex justify-center pt-12 sm:pt-32 pb-40">
           <div
             style={{ backgroundColor: "rgba(115,53,76,0.35)" }}
-            className="relative w-3/4 h-80 border rounded-md p-4"
+            className="relative w-3/4 h-auto border rounded-md p-4"
           >
             <h1 className="text-2xl font-bold text-center text-white">Como Anunciar</h1>
             <ul className="text-white">
@@ -53,11 +53,11 @@ export default function CorpoAnuncie() {
             <div className="flex justify-center pt-6"> {/* Adicione esta div */}
                 <button
                 onClick={openModal}
-                className="text-white border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition"
+                className="bg-pink-500 text-white border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition"
                 >
                     Termos e Condições
                 </button>
-                <button className="text-white border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4">
+                <button className="bg-pink-500 text-white border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4">
                     Quero me cadastrar
                 </button>
             </div>

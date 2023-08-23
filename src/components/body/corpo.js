@@ -1,46 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdLocationPin } from "react-icons/md";
+import api from '../../API/api';
+import { Link, Routes, useParams } from "react-router-dom";
+import Detalhes from '../pages/detalhes';
 
 export default function Corpo() {
-    // Mock data for products
-    const products = [
-        {
-            name: 'tenis',
-            image: '../imagens/tenis.jpg',
-            location: 'ceilandia'
-        },
-        {
-            name: 'Product 2',
-            image: 'tenis',
-            location: '$29.99'
-        },
-        {
-            name: 'Product 1',
-            image: 'image-url-1.jpg',
-            location: '$19.99'
-        },
-        {
-            name: 'Product 1',
-            image: 'image-url-1.jpg',
-            location: '$19.99'
-        },
-        // ... add more products
-    ];
+    const [products, setProducts] = useState([]);
+
+    const params = useParams()
+
+    useEffect(() => {
+        async function fetchProducts() {
+            try {
+                const fetchedProducts = params.type == "all"? await api.getProducts() : await api.getProducts(params.type);
+                setProducts(fetchedProducts);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }
+
+        fetchProducts();
+    }, [params.type]);
+    console.log(products)
+
+
+
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 m-8">
             {products.map((product, index) => (
-                <div key={index} className="bg-white p-4 shadow-md rounded-md">
-                    <img src={product.image} alt={product.name} className="w-full h-60 object-cover mb-2" />
+                <Link to={`/acompanhante/${product.id}`} key={index} className="mt-4 sm:mt-40 shadow-md rounded-lg hover:bg-pink-300 hover:text-black cursor-pointer">
+                    <img src={product.url[0]} alt={product.nome} className="w-full h-96 object-cover mb-2 border-none rounded-t-lg" />
                     <div className='flex items-center justify-center'>
-                        <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
+                        <h2 className="text-white text-lg font-semibold mb-2">{product.nome}</h2>
                     </div>
                     <div className='flex items-center justify-center'>
-                        <MdLocationPin />
-                        <p className="text-gray-600">{product.location}</p>
+                        <MdLocationPin className='text-white'/>
+                        <p className="text-white">{product.cidade}</p>
                     </div>
-                </div>
+                </Link>
             ))}
+            <Routes path="/acompanhante/:id" component={Detalhes} />/
         </div>
     );
 }
