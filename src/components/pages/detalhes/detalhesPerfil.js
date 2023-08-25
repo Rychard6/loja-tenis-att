@@ -4,6 +4,7 @@ import Modal from 'react-responsive-modal';
 import { useParams } from 'react-router-dom';
 import 'react-responsive-modal/styles.css';
 import { IoCallOutline, IoLogoWhatsapp } from "react-icons/io5";
+import Comentarios from './comentarios';
 
 export default function CorpoDetalhes(){
 
@@ -207,6 +208,7 @@ export default function CorpoDetalhes(){
                     <img src={modalImage} alt="Imagem Ampliada" className="max-h-screen mx-auto" />
                 </Modal>
                 </div>
+                <Comentarios />
         </>
     ):<p>carregandoo</p>
 }
