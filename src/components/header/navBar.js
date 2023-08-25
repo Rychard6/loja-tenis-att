@@ -42,7 +42,7 @@ export default function NavBar(){
 
             {/* banner */}
             <div className='flex justify'>
-                <h1 className='text-white md:pl-72'>site de produtos</h1>
+                <h1 className='text-white md:pl-72cd'>site de produtos</h1>
             </div>
 
             {/* buscar e darkMode */}
