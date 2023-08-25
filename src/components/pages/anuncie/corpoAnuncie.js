@@ -37,8 +37,7 @@ export default function CorpoAnuncie() {
                 WhatsApp e iniciar o processo de cadastro.  
               </li>
               <li className="pt-6 text-center">
-                2. Responda o nosso formulário no nosso whatsApp com seus dados para continuar o
-                cadastro.
+                2. Responda o nosso formulário no nosso whatsApp com seus dados para continuar a compra.
               </li>
               <li className="pt-6 text-center">
                 3. Clique no botão abaixo para ler nossos termos e
@@ -46,7 +45,7 @@ export default function CorpoAnuncie() {
                 <br />
               </li>
               <li className="pt-6 text-center">
-                4. Aproveite o primeiro mês grátis para conhecer todas as
+                4. Aproveite para conhecer todas as
                 nossas funcionalidades e benefícios!
               </li>
             </ul>
@@ -85,14 +84,14 @@ export default function CorpoAnuncie() {
       >
         <h1 className="text-center text-2xl font-semibold mb-4">Termos de Uso</h1>
         <h2 className="text-lg mb-2">Requisitos para anunciar:</h2>
-        <p>- <strong>Ser maior de idade;</strong></p>
-        <p>- Efetuar o pagamento do anúncio após trinta dias do anúncio;</p>
-        <p>- Fornecer os dados para cadastramento;</p>
-        <h2 className="text-lg mb-2">Não acesse este site se:</h2>
-        <p>- <strong>Você for menor de 18 anos;</strong></p>
-        <p>- O conteúdo for proibido em sua cidade ou estado;</p>
-        <p>- Você se sentir ofendido com o conteúdo;</p>
-        <p className="text-center pt-6">O <em>Delícias do Prazer</em> não possui nenhum vínculo com as acompanhantes. Somos um portal que oferece uma plataforma para indivíduos interessados em fornecer serviços de maneira autônoma e independente. No entanto, é importante ressaltar que não assumimos responsabilidade pela contratação dos serviços anunciados, nem atuamos como intermediários nesse processo.</p>
+        <p>- <strong>bla bla bla bla;</strong></p>
+        <p>- bla bla bla bla;</p>
+        <p>- bla bla bla bla;</p>
+        <h2 className="text-lg mb-2">bla bla bla bla:</h2>
+        <p>- <strong>bla bla bla bla;</strong></p>
+        <p>- bla bla bla bla;</p>
+        <p>- bla bla bla bla;</p>
+        <p className="text-center pt-6">bla bla bla bla <em>bla bla bla bla</em> bla bla bla bla.</p>
 
         <div className="flex justify-center pt-8">
         <button className="btn  bg-red-600" onClick={closeModal}>Fechar</button>

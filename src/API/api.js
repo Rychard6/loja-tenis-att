@@ -12,6 +12,6 @@ class API{
         .then(res => res.json())
     return products
     }
-
+    
 }
 export default new API()

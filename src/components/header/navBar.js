@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SearchBar from './search-bar'
-import banner from "../imagens/banner.png";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import '../../index.css'
@@ -43,7 +42,7 @@ export default function NavBar(){
 
             {/* banner */}
             <div className='flex justify'>
-                <img className="sm:ml-60 sm:mx-auto btn btn-ghost normal-case text-xl" src={banner} alt="Banner" />
+                <h1 className='text-white md:pl-72'>site de produtos</h1>
             </div>
 
             {/* buscar e darkMode */}
@@ -58,11 +57,11 @@ export default function NavBar(){
                         <div className={`${isMobile ? 'flex items-center justify-center h-full' : 'flex items-center justify-center h-12'}`}>
                             <div className={`btn-group md:flex-row flex-col ${isMobile ? 'h-3/4 md:h-auto' : ''}`}>
                                 <Link to='/home/all' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Home</Link>
-                                <Link to='/home/MULHERES' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0" onClick={toggleDiv}>Mulheres</Link>
-                                <Link to='/home/HOMENS' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Homens</Link> 
-                                <Link to='/home/TRAVESTIS' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Travestis</Link>
+                                <Link to='/home/FEMININO' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0" onClick={toggleDiv}>FEMININO</Link>
+                                <Link to='/home/MASCULINO' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>MASCULINO</Link> 
+                                <Link to='/home/INFANTIL' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>INFANTIL</Link>
                                 <Link to="/anuncie" className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Anuncie</Link>
-                                <Link to='/home/VIPS' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Vips</Link>
+                                <Link to='/home/NOVIDADES' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>NOVIDADES</Link>
                                 <Link to="/sobre" className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Sobre</Link>
                             </div>
                         </div>

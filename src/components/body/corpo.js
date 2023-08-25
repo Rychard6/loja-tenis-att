@@ -21,7 +21,7 @@ export default function Corpo() {
 
         fetchProducts();
     }, [params.type]);
-    console.log(products)
+
 
 
 
@@ -29,7 +29,7 @@ export default function Corpo() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 m-8">
             {products.map((product, index) => (
-                <Link to={`/acompanhante/${product.id}`} key={index} className="mt-4 sm:mt-40 shadow-md rounded-lg hover:bg-pink-300 hover:text-black cursor-pointer">
+                <Link to={`/produto/${product.id}`} key={index} className="mt-4 sm:mt-40 shadow-md rounded-lg hover:bg-pink-300 hover:text-black cursor-pointer">
                     <img src={product.url[0]} alt={product.nome} className="w-full h-96 object-cover mb-2 border-none rounded-t-lg" />
                     <div className='flex items-center justify-center'>
                         <h2 className="text-white text-lg font-semibold mb-2">{product.nome}</h2>
@@ -40,7 +40,7 @@ export default function Corpo() {
                     </div>
                 </Link>
             ))}
-            <Routes path="/acompanhante/:id" component={Detalhes} />/
+            
         </div>
     );
 }
