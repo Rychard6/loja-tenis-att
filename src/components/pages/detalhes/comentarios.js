@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
-import { FaGoogle, FaFacebook, FaTwitter } from 'react-icons/fa';
+import jwt_decode from "jwt-decode";
+import { GoogleLogin } from '@react-oauth/google';
 
 export default function Comentarios(){
+    {/* teste api google */}
+
+
+    {/* */}  
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [commentText, setCommentText] = useState('');
     const [comments, setComments] = useState([]);
 
     const handleLogin = (provider) => {
-        // Handle login with the selected provider (Google, Facebook, Twitter)
-        // For demonstration purposes, let's just toggle the login state
         setIsLoggedIn(!isLoggedIn);
     };
 
@@ -33,24 +36,18 @@ export default function Comentarios(){
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-white">Comments ({comments.length})</h2>
         <div className="flex space-x-2">
-          <button
+
+          <GoogleLogin
             onClick={() => handleLogin('google')}
-            className="bg-blue-500 text-white px-2 py-1 rounded"
-          >
-            <FaGoogle />
-          </button>
-          <button
-            onClick={() => handleLogin('facebook')}
-            className="bg-blue-800 text-white px-2 py-1 rounded"
-          >
-            <FaFacebook />
-          </button>
-          <button
-            onClick={() => handleLogin('twitter')}
-            className="bg-blue-400 text-white px-2 py-1 rounded"
-          >
-            <FaTwitter />
-          </button>
+            onSuccess={credentialResponse => {
+              const credentialResponseDecoded = jwt_decode(credentialResponse.credential);
+              console.log(credentialResponseDecoded)
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />;
+
         </div>
       </div>
       <textarea

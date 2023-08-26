@@ -4,6 +4,8 @@ import 'tailwindcss/tailwind.css';
 import App from './App';
 import './index.css';
 
+import {GoogleOAuthProvider} from '@react-oauth/google'
+
 //configurando o router
 import {createBrowserRouter, RouterProvider } from "react-router-dom"
 
@@ -45,4 +47,12 @@ const router = createBrowserRouter([
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
-root.render(<RouterProvider router={router} />);
+
+// Encapsule toda a renderização dentro do ReactDOM.render()
+root.render(
+    <GoogleOAuthProvider clientId="751407083928-smbnqbpsa3fhbabr9c141jteeu2c8esf.apps.googleusercontent.com">
+        <RouterProvider router={router}>
+            <App />
+        </RouterProvider>
+    </GoogleOAuthProvider>
+);
