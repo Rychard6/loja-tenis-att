@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [
+  content: [
     // Paths to your HTML/JS files that are using Tailwind classes
     "./src/**/*.html",
     "./src/**/*.js",
