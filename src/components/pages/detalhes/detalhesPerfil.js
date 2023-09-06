@@ -208,7 +208,7 @@ export default function CorpoDetalhes(){
                     <img src={modalImage} alt="Imagem Ampliada" className="max-h-screen mx-auto" />
                 </Modal>
                 </div>
-                <Comentarios />
+                <Comentarios productId={params.id} initialComments={product.reviews}/>
         </>
     ):<p>carregandoo</p>
 }

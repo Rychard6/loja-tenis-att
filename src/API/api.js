@@ -12,6 +12,16 @@ class API{
         .then(res => res.json())
     return products
     }
+
+    async createComment(user, text, profilePictureUrl, productId){
+        
+        const comment = await fetch(this.url + `review`, {
+            method: 'POST',
+            body: JSON.stringify({user, text, profilePictureUrl, productId}),
+        }).then(res => res.json())
+
+        return comment
+    }
     
 }
 export default new API()
