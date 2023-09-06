@@ -32,11 +32,12 @@ export default function SearchBarMobile() {
 
   const nomesFiltrados = useMemo(() => {
     const lowerBusca = busca.toLowerCase();
+    console.log(products)
     return products
       .filter((product) => product.nome.toLowerCase().includes(lowerBusca));
   }, [busca, products]);  
 
-  return (
+  return products.length? (
     <div className="relative">
       {isSearchOpen ? (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-stretch z-50">
@@ -80,5 +81,5 @@ export default function SearchBarMobile() {
         />
       )}
     </div>
-  );
+  ): <p>carregando</p>
 }

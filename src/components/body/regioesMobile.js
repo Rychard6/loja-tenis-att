@@ -56,5 +56,5 @@ export default function RegioesMobile() {
         </div>
       )}
     </div>
-  );
+  );  
 }

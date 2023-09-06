@@ -40,11 +40,13 @@ export default function Comentarios(){
           <GoogleLogin
             onClick={() => handleLogin('google')}
             onSuccess={credentialResponse => {
+              setIsLoggedIn(true)
               const credentialResponseDecoded = jwt_decode(credentialResponse.credential);
               console.log(credentialResponseDecoded)
             }}
             onError={() => {
               console.log('Login Failed');
+              setIsLoggedIn(false)
             }}
           />;
 

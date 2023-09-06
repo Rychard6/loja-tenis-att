@@ -26,7 +26,7 @@ export default function Corpo() {
 
 
 
-    return (
+    return products.length? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 m-8">
             {products.map((product, index) => (
                 <Link to={`/produto/${product.id}`} key={index} className="mt-4 sm:mt-40 shadow-md rounded-lg hover:bg-pink-300 hover:text-black cursor-pointer">
@@ -40,7 +40,6 @@ export default function Corpo() {
                     </div>
                 </Link>
             ))}
-            
         </div>
-    );
+    ): <p>carregando</p>
 }
