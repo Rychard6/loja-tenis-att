@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import api from '../../../API/api';
+import { IoTrash } from "react-icons/io5";
 export default function Comentarios({ productId, initialComments }) {
   {
     /* teste api google */
@@ -25,19 +26,31 @@ export default function Comentarios({ productId, initialComments }) {
   const handleCommentSubmit = async () => {
     if (commentText.trim() !== "") {
       // Create a new comment object and add it to the comments list
+      console.log("commentText", commentText);
+      const newComment = await api.createComment(
+        isLoggedIn ? "Logged In User" : "Anonymous User",
+        commentText,
+        "https://w0.peakpx.com/wallpaper/979/89/HD-wallpaper-purple-smile-design-eye-smily-profile-pic-face-thumbnail.jpg",
+        +productId,
+      );
 
-      const newComment = await api.createComment({
-        text: commentText,
-        user: isLoggedIn ? "Logged In User" : "Anonymous User",
-        profilePictureUrl:
-          "https://w0.peakpx.com/wallpaper/979/89/HD-wallpaper-purple-smile-design-eye-smily-profile-pic-face-thumbnail.jpg",
-        productId,
-      });
-      
       setComments([...comments, newComment]);
       setCommentText("");
     }
   };
+    //excluir
+    const handleCommentDelete = async (commentId) => {
+      try {
+        // Envie uma solicitação DELETE para a rota apropriada no backend (substitua a URL conforme necessário).
+        await api.delete(`/review/${commentId}`);
+        // Atualize o estado local para refletir a exclusão bem-sucedida (remova o comentário da lista, por exemplo).
+        setComments(comments.filter((comment) => comment.id !== commentId));
+      } catch (error) {
+        console.error("Erro ao excluir o comentário", error);
+      }
+    };
+
+  
   return (
     <>
       <div className="p-4">
@@ -85,12 +98,26 @@ export default function Comentarios({ productId, initialComments }) {
         </div>
         <div className="mt-4">
           {comments.map((comment, index) => (
-            <div key={index} className="border-t pt-4">
-              <p className="text-gray-700">
+            <div key={index} className="flex items-center border-t py-6 ">
+              <div className=" w-10 h-10 rounded-full overflow-hidden mr-6">
+                <img
+                  src={comment.profilePictureUrl}
+                  alt={`${comment.user} profile`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-white mb-4 pt-4">
                 <span className="font-semibold">{comment.user}: </span>
                 {comment.text}
               </p>
+              <div className="flex items-center ml-auto"> {/* Isso coloca o botão na extrema direita */}
+                <button onClick={() => handleCommentDelete(comment.id)}>
+                  <IoTrash className="text-2xl text-white"/>
+                </button>
+              </div>
             </div>
+
+
           ))}
         </div>
       </div>

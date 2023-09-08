@@ -1,27 +1,49 @@
-class API{
-    url = "http://localhost:3001/";
+import axios from "axios";
 
-    async getProducts(type){
-        const products = await fetch(this.url + `product${type?`?type=${type}`:""}`)
-            .then(res => res.json())
-        return products
-    }
+class API {
+  url = "http://localhost:3001/";
 
-    async getProduct(id){
-    const products = await fetch(this.url + `product/${id}`)
-        .then(res => res.json())
-    return products
-    }
+  api = axios.create({
+    baseURL: this.url,
+  });
 
-    async createComment(user, text, profilePictureUrl, productId){
-        
-        const comment = await fetch(this.url + `review`, {
-            method: 'POST',
-            body: JSON.stringify({user, text, profilePictureUrl, productId}),
-        }).then(res => res.json())
+  async getProducts(type) {
+    const products = await fetch(
+      this.url + `product${type ? `?type=${type}` : ""}`
+    ).then((res) => res.json());
+    return products;
+  }
 
-        return comment
-    }
-    
+  async getProduct(id) {
+    const products = await fetch(this.url + `product/${id}`).then((res) =>
+      res.json()
+    );
+    return products;
+  }
+
+  async createComment(user, text, profilePictureUrl, productId) {
+    console.log(user, text, profilePictureUrl, productId);
+    const comment = await this.api
+      .post("review", { user, text, profilePictureUrl, productId })
+      .then((res) => res.data)
+      .catch((err) => console.log(err));
+
+    console.log(comment);
+    return comment;
+  }
+  
+  // tentativa exclusão
+  async deleteComment(user, text, profilePictureUrl, productId) {
+    console.log(user, text, profilePictureUrl, productId);
+    const comment = await this.api
+      .delete("review", { user, text, profilePictureUrl, productId })
+      .then((res) => res.data)
+      .catch((err) => console.log(err));
+
+    console.log(comment);
+    return comment;
+  }
+
+  
 }
-export default new API()
+export default new API();
