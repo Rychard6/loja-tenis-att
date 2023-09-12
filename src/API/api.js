@@ -33,10 +33,9 @@ class API {
   }
   
   // tentativa exclusão
-  async deleteComment(user, text, profilePictureUrl, productId) {
-    console.log(user, text, profilePictureUrl, productId);
+  async deleteComment(id) {
     const comment = await this.api
-      .delete("review", { user, text, profilePictureUrl, productId })
+      .delete(`review/${id}`)
       .then((res) => res.data)
       .catch((err) => console.log(err));
 

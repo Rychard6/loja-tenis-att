@@ -42,7 +42,7 @@ export default function Comentarios({ productId, initialComments }) {
     const handleCommentDelete = async (commentId) => {
       try {
         // Envie uma solicitação DELETE para a rota apropriada no backend (substitua a URL conforme necessário).
-        await api.delete(`/review/${commentId}`);
+        await api.deleteComment(commentId);
         // Atualize o estado local para refletir a exclusão bem-sucedida (remova o comentário da lista, por exemplo).
         setComments(comments.filter((comment) => comment.id !== commentId));
       } catch (error) {
