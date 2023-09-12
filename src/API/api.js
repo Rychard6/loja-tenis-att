@@ -1,22 +1,28 @@
 import axios from "axios";
 
 class API {
-  url = "http://localhost:3001/";
+  url = process.env.REACT_APP_API_BASE_URL;
 
   api = axios.create({
     baseURL: this.url,
   });
 
   async getProducts(type) {
-    const products = await fetch(
-      this.url + `product${type ? `?type=${type}` : ""}`
-    ).then((res) => res.json());
+    // const products = await fetch(
+    //   this.url + `product${type ? `?type=${type}` : ""}`
+    // ).then((res) => res.json());
+    // return products;
+    const products = await this.api
+      .get("product", { params: { type } })
+      .then((res) => res.data)
+      .catch((e) => console.log(e));
+
     return products;
   }
 
   async getProduct(id) {
-    const products = await fetch(this.url + `product/${id}`).then((res) =>
-      res.json()
+    const products = await this.api.get(`product/${id}`).then(res =>
+      res.data
     );
     return products;
   }
@@ -31,7 +37,7 @@ class API {
     console.log(comment);
     return comment;
   }
-  
+
   // tentativa exclusão
   async deleteComment(id) {
     const comment = await this.api
@@ -42,7 +48,5 @@ class API {
     console.log(comment);
     return comment;
   }
-
-  
 }
 export default new API();
