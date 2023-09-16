@@ -110,9 +110,11 @@ export default function Comentarios({ productId, initialComments }) {
                 {comment.text}
               </p>
               <div className="flex items-center ml-auto"> {/* Isso coloca o botão na extrema direita */}
-                <button onClick={() => handleCommentDelete(comment.id)}>
+                {comment.userEmail === user?.email? 
+                  <button onClick={() => handleCommentDelete(comment.id)}>
                   <IoTrash className="text-2xl text-white"/>
-                </button>
+                </button>:
+                <></>}
               </div>
             </div>
 
