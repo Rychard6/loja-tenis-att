@@ -26,9 +26,7 @@ export default function Comentarios({ productId, initialComments }) {
       // Create a new comment object and add it to the comments list
       console.log("commentText", commentText);
       const newComment = await api.createComment(
-        user.name,
         commentText,
-        user.picture,
         +productId,
       );
 
@@ -66,7 +64,8 @@ export default function Comentarios({ productId, initialComments }) {
                 console.log(credentialResponseDecoded);
                 setUser(credentialResponseDecoded);
                 localStorage.setItem("user", JSON.stringify(credentialResponseDecoded));
-              }}
+                localStorage.setItem("token", credentialResponse.credential);
+                }}
               onError={() => {
                 console.log("Login Failed");
                 setUser(null)

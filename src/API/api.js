@@ -23,13 +23,19 @@ class API {
     return products;
   }
 
-  async createComment(user, text, profilePictureUrl, productId) {
+  async createComment(text, productId) {
     const comment = await this.api
-      .post("review", { user, text, profilePictureUrl, productId })
+      .post(
+        "review",
+        { text, productId },
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      )
       .then((res) => res.data)
       .catch((err) => console.log(err));
 
-    return comment
+    return comment;
   }
 
   async deleteComment(id) {
