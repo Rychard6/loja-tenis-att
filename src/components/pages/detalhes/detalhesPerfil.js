@@ -39,7 +39,7 @@ export default function CorpoDetalhes() {
         }
 
         fetchProduct();
-    }, []);
+    }, [params.id]);
 
     //whatsapp redirecionamento
     console.log(product.telefone)

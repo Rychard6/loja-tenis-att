@@ -1,23 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { UserContext } from "../../../context/userContext";
 import jwt_decode from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import api from '../../../API/api';
 import { IoTrash } from "react-icons/io5";
 export default function Comentarios({ productId, initialComments }) {
-  {
-    /* teste api google */
-  }
 
-  {
-    /* */
-  }
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {user, setUser} = useContext(UserContext);
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState(initialComments);
 
-  const handleLogin = (provider) => {
-    setIsLoggedIn(!isLoggedIn);
-  };
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setUser(JSON.parse(user));
+    }
+  }, [])
 
   const handleCommentChange = (event) => {
     setCommentText(event.target.value);
@@ -28,9 +26,9 @@ export default function Comentarios({ productId, initialComments }) {
       // Create a new comment object and add it to the comments list
       console.log("commentText", commentText);
       const newComment = await api.createComment(
-        isLoggedIn ? "Logged In User" : "Anonymous User",
+        user.name,
         commentText,
-        "https://w0.peakpx.com/wallpaper/979/89/HD-wallpaper-purple-smile-design-eye-smily-profile-pic-face-thumbnail.jpg",
+        user.picture,
         +productId,
       );
 
@@ -60,17 +58,19 @@ export default function Comentarios({ productId, initialComments }) {
           </h2>
           <div className="flex space-x-2">
             <GoogleLogin
-              onClick={() => handleLogin("google")}
+              //onClick={() => handleLogin("google")}
               onSuccess={(credentialResponse) => {
-                setIsLoggedIn(true);
                 const credentialResponseDecoded = jwt_decode(
                   credentialResponse.credential
                 );
                 console.log(credentialResponseDecoded);
+                setUser(credentialResponseDecoded);
+                localStorage.setItem("user", JSON.stringify(credentialResponseDecoded));
               }}
               onError={() => {
                 console.log("Login Failed");
-                setIsLoggedIn(false);
+                setUser(null)
+                localStorage.removeItem("user");
               }}
             />
             ;
@@ -84,7 +84,7 @@ export default function Comentarios({ productId, initialComments }) {
           placeholder="Write your comment..."
         ></textarea>
         <div className="mt-2">
-          {isLoggedIn ? (
+          {user ? (
             <button
               onClick={handleCommentSubmit}
               className="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50"
