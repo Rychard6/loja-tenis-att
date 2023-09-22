@@ -55,18 +55,18 @@ export default function CorpoDetalhes() {
         <>
             <div className='md:hidden'>
                 <img src={product.url[0]} className='pt-20 h-96 w-full'>
+
+                </img>
                 <div className='w-full h-auto flex justify-center items-center pt-4 pr-12'>
                     <button className="w-34 text-white bg-pink-600 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4 opacity-50">
-                        <IoCallOutline className='text-center text-3xl ml-10' />
+                        <IoCallOutline className='text-center text-3xl ml-10 text-blue-400 opacity-75' />
                         Me ligue agora
                     </button>
                     <button className="w-34 text-white  bg-green-700 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4 opacity-50">
-                        <IoLogoWhatsapp className='text-3xl ml-10' />
+                        <IoLogoWhatsapp className='text-3xl ml-10 text-green-600' />
                         Comprar agora
                     </button>
                 </div>
-                </img>
-
             </div>
 
             <div className='pt-8 md:pt-32 pl-2 md:pl-16'>
