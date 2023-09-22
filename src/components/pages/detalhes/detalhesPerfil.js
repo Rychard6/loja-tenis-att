@@ -87,34 +87,34 @@ export default function CorpoDetalhes() {
                     <div className="w-full md:w-2/4 ">
                         <div className=" w-full h-auto flex justify-center items-center border-none rounded-bl-lg rounded-r-lg">
                             <div className=" w-2/4 auto border-none rounded-bl-lg">
-                                <div className="whitespace-nowrap pt-4 pl-2 text-white">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 font-roboto">nome: </span>{product.nome}
+                                        <span className="text-pink-400 font-roboto">nome: </span>{product.nome}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white border-none rounded-l-md">
+                                <div className="whitespace-nowrap pt-4 pl-2 text-white border-none rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">peso: </span>{product.peso}
+                                        <span className="text-pink-400 ">peso: </span>{product.peso}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">cel: </span>{product.telefone}
+                                        <span className="text-pink-400 ">cel: </span>{product.telefone}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
+                                <div className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">estoque: </span>{product.estoque}
+                                        <span className="text-pink-400 ">estoque: </span>{product.estoque}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">Vendador: </span>{product.vendedor}
+                                        <span className="text-pink-400 ">Vendador: </span>{product.vendedor}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
+                                <div className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">tamanho: </span>{product.tamanho}
+                                        <span className="text-pink-400 ">tamanho: </span>{product.tamanho}
                                     </h1>
                                 </div>
                             </div>
