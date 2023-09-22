@@ -71,10 +71,10 @@ export default function CorpoDetalhes() {
 
             <div className='pt-8 md:pt-32 pl-2 md:pl-16'>
                 <div className="w-full pl-2 md:w-72 md:whitespace-nowrap h-auto border-b-4 border-pink-700 rounded-tl-lg">
-                    <h1 className="text-white text-lg pt-6"><strong>produto</strong></h1>
+                    <h1 className="text-white text-lg pt-6"><strong>Produtoooo</strong></h1>
                 </div>
                 <div className="w-full pl-2 pt-4 md:pl-4 text-white">
-                    <h1 className='text-3xl font-mono italic font-medium uppercase'>{product.nome}, <span className='font-sans text-pink-600 '>{product.valor}</span> Reais</h1>
+                    <h1 className='text-3xl font-roboto italic font-medium uppercase'>{product.nome}, <span className='font-sans text-pink-600 '>{product.valor}</span> Reais</h1>
                 </div>
             </div>
             <div className=" md:block pt-8 md:pl-16 md:min-h-screen justify-center">

@@ -7,6 +7,9 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
+      Family: {
+        roboto: ['Roboto', 'sans'],
+      },
       backgroundColor: {
         'hb': 'rgba(244, 204, 204, 0.85)',
       },
