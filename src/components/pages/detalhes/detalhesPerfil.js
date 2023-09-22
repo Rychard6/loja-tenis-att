@@ -58,7 +58,7 @@ export default function CorpoDetalhes() {
 
                 </img>
                 <div className='w-full h-auto flex justify-center items-center pt-4 pr-12'>
-                    <button className="ml-4 w-34 text-white bg-pink-600 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4 opacity-50">
+                    <button className="w-34 text-white bg-pink-600 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-8 opacity-50">
                         <IoCallOutline className=' text-center text-3xl ml-10 text-blue-400 opacity-75' />
                         Me ligue agora
                     </button>
