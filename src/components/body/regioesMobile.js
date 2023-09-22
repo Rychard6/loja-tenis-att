@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { TfiClose } from "react-icons/tfi";
+import { conversorCidade } from './conversorCidade';
 
 const locations = [
   "Asa Norte", "Asa Sul", "Águas Claras", "Lago Sul", "Lago Norte",
@@ -20,7 +21,7 @@ export default function RegioesMobile() {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-
+  
   return (
     <div className="flex justify-center items-center">
       <button
@@ -43,8 +44,8 @@ export default function RegioesMobile() {
               {locations.map((location, index) => (
                 <Link
                   key={index}
-                  to={`/destino/${location}`} // Substitua "/destino" pelo caminho desejado
-                  className="btn bg-pink-400 block hover:no-underline py-2 px-4 hover:bg-gray-100 cursor-pointer text-white text-lg focus:text-black"
+                  to={`/cidade/${conversorCidade[location]}`} // Substitua "/destino" pelo caminho desejado
+                  className="btn bg-pink-400 block hover:no-underline py-2 px-4 hover:bg-gray-100 cursor-pointer text-black text-lg focus:text-black"
                   onClick={closeMenu} // Fechar o menu quando um link for clicado
                 >
                   {location}

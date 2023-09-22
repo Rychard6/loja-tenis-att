@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path: "/home/:type",
-                element: <Home />,
+                element: <Home filterType="gender"/>,
             },
             {
                 path: "/anuncie",
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "/produto/:id",
                 element: <Detalhes />,
+            },
+            {
+                path: "/cidade/:cidade",
+                element: <Home filterType="city" />,
             },
             
         ],

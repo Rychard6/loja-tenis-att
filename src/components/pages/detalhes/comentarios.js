@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../../context/userContext";
 import jwt_decode from "jwt-decode";
-import { GoogleLogin } from "@react-oauth/google";
+import { GoogleLogin} from "@react-oauth/google";
 import api from '../../../API/api';
 import { IoTrash } from "react-icons/io5";
 export default function Comentarios({ productId, initialComments }) {
@@ -46,6 +46,12 @@ export default function Comentarios({ productId, initialComments }) {
       }
     };
 
+    let handleLogout = (e) =>{
+      setUser(null)
+      localStorage.removeItem("user")
+
+    }
+
   
   return (
     <>
@@ -54,7 +60,13 @@ export default function Comentarios({ productId, initialComments }) {
           <h2 className="text-lg font-semibold text-white">
             Comments ({comments.length})
           </h2>
-          <div className="flex space-x-2">
+
+          {user? (
+            <div className="w-20 h-10 bg-blue-600 text-white flex justify-center items-center rounded-md text-md">
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          ):(
+            <div className="flex space-x-2">
             <GoogleLogin
               //onClick={() => handleLogin("google")}
               onSuccess={(credentialResponse) => {
@@ -72,8 +84,9 @@ export default function Comentarios({ productId, initialComments }) {
                 localStorage.removeItem("user");
               }}
             />
-          
+            
           </div>
+          )}   
         </div>
         <textarea
           rows="4"
@@ -110,7 +123,7 @@ export default function Comentarios({ productId, initialComments }) {
                 {comment.text}
               </p>
               <div className="flex items-center ml-auto"> {/* Isso coloca o botão na extrema direita */}
-                {comment.userEmail === user?.email? 
+                {comment.userEmail === comment.userEmail?//user?.email? 
                   <button onClick={() => handleCommentDelete(comment.id)}>
                   <IoTrash className="text-2xl text-white"/>
                 </button>:

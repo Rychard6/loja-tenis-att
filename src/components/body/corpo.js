@@ -4,7 +4,7 @@ import api from '../../API/api';
 import { Link, Routes, useParams } from "react-router-dom";
 import Detalhes from '../pages/detalhes';
 
-export default function Corpo() {
+export default function Corpo({filterType}) {
     const [products, setProducts] = useState([]);
 
     const params = useParams()
@@ -12,7 +12,8 @@ export default function Corpo() {
     useEffect(() => {
         async function fetchProducts() {
             try {
-                const fetchedProducts = params.type == "all"? await api.getProducts() : await api.getProducts(params.type);
+                const arg = filterType === "gender"? {type: params.type}:{city: params.cidade}
+                const fetchedProducts = params.type == "all"? await api.getProducts({}) : await api.getProducts(arg);
                 setProducts(fetchedProducts);
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -20,7 +21,7 @@ export default function Corpo() {
         }
 
         fetchProducts();
-    }, [params.type]);
+    }, [params.type, params.cidade, filterType]);
 
 
 

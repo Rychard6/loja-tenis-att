@@ -4,7 +4,7 @@ import Regioes from "./Regioes";
 import Corpo from "./corpo";
 import RegioesMobile from "./regioesMobile";
 
-export default function Body() {
+export default function Body({filterType}) {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
@@ -18,7 +18,7 @@ export default function Body() {
           <Regioes />
         </div>
       )}
-      <Corpo />
+      <Corpo filterType={filterType} />
     </>
   );
 }

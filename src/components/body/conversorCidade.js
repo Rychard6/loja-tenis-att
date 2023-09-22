@@ -1,0 +1,1 @@
+export const conversorCidade = {"Asa Norte": "AsaNorte", "Asa Sul":"AsaSul", "Taguatinga":"Taguatinga"}

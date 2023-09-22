@@ -20,7 +20,7 @@ export default function SearchBarMobile() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const productsData = await api.getProducts();
+        const productsData = await api.getProducts({});
         setProducts(productsData);
       } catch (error) {
         console.error('Error fetching products:', error);

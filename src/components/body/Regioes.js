@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { conversorCidade } from './conversorCidade';
 
 export default function Regioes() {
     const locations = [
@@ -9,15 +11,18 @@ export default function Regioes() {
         "Brazlândia", "Candangolândia"
     ];
 
+
     const buttons = locations.map((location, index) => (
-        <button key={index} className="btn w-40 h-12 m-1 border-white bg-black text-white hover:text-black hover:border-pink-500 hover: border-3 ">
-            {location}
-        </button>
+        <Link to={`/cidade/${conversorCidade[location]}`}>
+            <button key={index} className="btn w-40 h-12 m-1 border-white bg-black text-white hover:text-black hover:border-pink-500 hover: border-3 ">
+                {location}
+            </button>
+        </Link>
     ));
 
     return (
-      <div className="flex flex-wrap pt-36 mx-auto text-center rounded-md shadow  justify-center " style={{ width: '75%' }}>
-          {buttons}
-      </div>
+        <div className="flex flex-wrap pt-36 mx-auto text-center rounded-md shadow  justify-center " style={{ width: '75%' }}>
+            {buttons}
+        </div>
     );
 }

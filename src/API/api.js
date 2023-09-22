@@ -7,9 +7,9 @@ class API {
     baseURL: this.url,
   });
 
-  async getProducts(type) {
+  async getProducts({type, city}) {
     const products = await this.api
-      .get("product", { params: { type } })
+      .get("product", { params: { type, city } })
       .then((res) => res.data)
       .catch((e) => console.log(e));
 
@@ -40,7 +40,7 @@ class API {
 
   async deleteComment(id) {
     const comment = await this.api
-      .delete(`review/${id}`)
+      .delete(`review/${id}`, {headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }})
       .then((res) => res.data)
       .catch((err) => console.log(err));
 
