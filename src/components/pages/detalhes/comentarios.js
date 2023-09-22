@@ -55,9 +55,6 @@ export default function Comentarios({ productId, initialComments }) {
             Comments ({comments.length})
           </h2>
           <div className="flex space-x-2">
-            {user ? (
-              <p className="text-sm text-gray-500">Logout.</p>
-              ) : (
             <GoogleLogin
               //onClick={() => handleLogin("google")}
               onSuccess={(credentialResponse) => {
@@ -75,9 +72,7 @@ export default function Comentarios({ productId, initialComments }) {
                 localStorage.removeItem("user");
               }}
             />
-            
-              
-            )}
+          
           </div>
         </div>
         <textarea

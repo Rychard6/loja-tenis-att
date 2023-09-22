@@ -121,7 +121,7 @@ export default function CorpoDetalhes() {
                             <div className=" w-2/4 h-auto border-none rounded-r-lg">
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Valor2: </span>{product.valor}
+                                        <span className="text-pink-400 ">Valor: </span>{product.valor}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
