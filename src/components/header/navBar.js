@@ -43,7 +43,7 @@ export default function NavBar(){
 
             {/* banner */}
             <div className='flex justify'>
-            <img src={imageUrl} alt="banner" className="w-auto h-auto"/>
+            <img src={imageUrl} alt="banner" className="w-16 h-10"/>
             </div>
 
             {/* buscar e darkMode */}
