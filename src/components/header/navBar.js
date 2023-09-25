@@ -46,7 +46,7 @@ export default function NavBar(){
             {/* banner */}
             <Link to='/home/all'>
                 <div className='flex justify'>
-                    <img className="md:ml-60 md:mx-auto btn btn-ghost normal-case text-xl" src={imageUrl} alt="Banner" />
+                    <img className="mr-4 md:ml-60 md:mx-auto btn btn-ghost normal-case text-xl" src={imageUrl} alt="Banner" />
                 </div>
             </Link>
 
