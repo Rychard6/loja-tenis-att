@@ -6,7 +6,6 @@ import '../../index.css'
 import SearchBarMobile from './searchBarMobile';
 
 export default function NavBar(){
-    const imageUrl = 'https://drive.google.com/uc?id=15qGdpqMB8IjWxwXzp7o4X9wEN9F6T6qL';
     const [isDivVisible, setDivVisibility] = useState(false);
 
     const toggleDiv = () => {
@@ -15,7 +14,10 @@ export default function NavBar(){
 
 
 
-    const isMobile = useMediaQuery({ maxWidth: 767 }); // Define um breakpoint para telas menores
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+    const imageUrl = isMobile
+    ? 'https://drive.google.com/uc?id=1wg9BaHn-l9ounI7DDRoR0pW_vcC5zLaF'
+    : 'https://drive.google.com/uc?id=15qGdpqMB8IjWxwXzp7o4X9wEN9F6T6qL';
     
     return(
         <>
