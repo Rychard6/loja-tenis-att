@@ -25,7 +25,7 @@ export default function NavBar(){
             <div className="flex items-center  space-x-4">
 
                     {/* menuOpem */}  
-                    <label className="swap swap-rotate p-2  w-10 h-10">
+                    <label className="swap swap-rotate   w-10 h-10">
 
                     {/* this hidden checkbox controls the state */}
                     <input type="checkbox" onClick={toggleDiv}/>
