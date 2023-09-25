@@ -6,6 +6,7 @@ import '../../index.css'
 import SearchBarMobile from './searchBarMobile';
 
 export default function NavBar(){
+    const imageUrl = 'https://drive.google.com/uc?id=15qGdpqMB8IjWxwXzp7o4X9wEN9F6T6qL';
     const [isDivVisible, setDivVisibility] = useState(false);
 
     const toggleDiv = () => {
@@ -42,7 +43,7 @@ export default function NavBar(){
 
             {/* banner */}
             <div className='flex justify'>
-                <h1 className='text-white md:pl-72cd'>site de produtos</h1>
+            <img src={imageUrl} alt="banner" />
             </div>
 
             {/* buscar e darkMode */}
