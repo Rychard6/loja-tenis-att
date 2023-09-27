@@ -64,7 +64,7 @@ export default function NavBar(){
                                 <Link to='/home/all' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Home</Link>
                                 <Link to='/home/FEMININO' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0" onClick={toggleDiv}>FEMININO</Link>
                                 <Link to='/home/MASCULINO' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>MASCULINO</Link> 
-                                <Link to='/home/INFANTIL' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>INFANTIL</Link>
+                                <Link to='/home/INFANTIL' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Vips</Link>
                                 <Link to="/anuncie" className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Anuncie</Link>
                                 <Link to='/home/NOVIDADES' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>NOVIDADES</Link>
                                 <Link to="/sobre" className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Sobre</Link>
