@@ -48,7 +48,7 @@ export default function CorpoDetalhes() {
         const message = encodeURIComponent('Olá, estou vindo do seu anuncio no Lojinha Top');
         const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
         window.open(whatsappLink, '_blank');
-      };
+    };
 
 
     return product.url ? (
@@ -87,64 +87,74 @@ export default function CorpoDetalhes() {
                     <div className="w-full md:w-2/4 ">
                         <div className=" w-full h-auto flex justify-center items-center border-none rounded-bl-lg rounded-r-lg">
                             <div className=" w-2/4 auto border-none rounded-bl-lg">
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white">
+                                <div className="whitespace-nowrap pt-4 pl-2 text-white">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 font-roboto">Nome: </span>{product.nome}
+                                        <span className="text-pink-500 ">idade: </span>{product.idade}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 pl-2 text-white border-none rounded-l-md">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white border-none rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Peso: </span>{product.peso}
+                                        <span className="text-pink-500 ">peso: </span>{product.peso}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white bg-">
+                                <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Cel: </span>{product.telefone}
+                                        <span className="text-pink-500 ">cel: </span>{product.telefone}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Estoque: </span>{product.estoque}
+                                        <span className="text-pink-500 ">Mora só: </span>{product.MoraSo}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white bg-">
+                                <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Vendador: </span>{product.vendedor}
+                                        <span className="text-pink-500 ">Cidade: </span>{product.cidade}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Tamanho: </span>{product.tamanho}
+                                        <span className="text-pink-500 ">Oral sem: </span>{product.oral}
+                                    </h1>
+                                </div>
+                                <div className="whitespace-nowrap pt-4 pb-4 pl-2 text-white bg-">
+                                    <h1 className="md:text-lg font-mono">
+                                        <span className="text-pink-500 ">Hr:</span>{product.horario}
                                     </h1>
                                 </div>
                             </div>
                             <div className=" w-2/4 h-auto border-none rounded-r-lg">
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
-                                    <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Valor: </span>{product.valor}
-                                    </h1>
-                                </div>
                                 <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Marca: </span>{product.marca}
+                                        <span className="text-pink-500 ">Valor: </span>{product.valor}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Cidade: </span>{product.cidade}
+                                        <span className="text-pink-500 ">Altura: </span>{product.altura}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Estoque: </span>{product.estoque}
+                                        <span className="text-pink-500 ">Whatsapp: </span>{product.whatsapp}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-400 ">Material: </span>{product.material}
+                                        <span className="text-pink-500 ">Atende: </span>{product.atende}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
+                                    <h1 className="md:text-lg font-mono">
+                                        <span className="text-pink-500 ">Beija: </span>{product.beija}
+                                    </h1>
+                                </div>
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
+                                    <h1 className="md:text-lg font-mono">
+                                        <span className="text-pink-500 ">Anal: </span>{product.anal}
+                                    </h1>
+                                </div>
+                                <div className="whitespace-nowrap pt-4 pb-4 md:pl-4 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
                                         <span className="text-pink-500 ">Cartão: </span><span>{product.cartao}</span>
                                     </h1>
@@ -187,16 +197,16 @@ export default function CorpoDetalhes() {
             {/**Area comentarios */}
             <div className='hidden md:flex md:justify-center md:items-center md:mt-10 mb-28'>
                 <div className='w-auto h-auto'>
-                        <button className="w-34 text-white bg-pink-600 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4"
+                    <button className="w-34 text-white bg-pink-600 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4"
                         onClick={() => window.location.href = `tel:${product.telefone}`}>
-                            <IoCallOutline className='text-center text-3xl ml-10' />
-                            Me ligue agora
-                        </button>
-                        <button className="w-34 text-white bg-green-700 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4"
+                        <IoCallOutline className='text-center text-3xl ml-10' />
+                        Me ligue agora
+                    </button>
+                    <button className="w-34 text-white bg-green-700 border border-white py-1 px-2 rounded-md bg-transparent hover:bg-white hover:text-black transition ml-4"
                         onClick={openWhatsApp}>
-                            <IoLogoWhatsapp className='text-3xl ml-10' />
-                            Comprar agora
-                        </button>
+                        <IoLogoWhatsapp className='text-3xl ml-10' />
+                        Comprar agora
+                    </button>
                 </div>
 
             </div>

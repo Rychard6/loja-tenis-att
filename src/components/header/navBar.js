@@ -62,11 +62,11 @@ export default function NavBar(){
                         <div className={`${isMobile ? 'flex items-center justify-center h-full' : 'flex items-center justify-center h-12'}`}>
                             <div className={`btn-group md:flex-row flex-col ${isMobile ? 'h-3/4 md:h-auto' : ''}`}>
                                 <Link to='/home/all' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Home</Link>
-                                <Link to='/home/FEMININO' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0" onClick={toggleDiv}>FEMININO</Link>
-                                <Link to='/home/MASCULINO' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>MASCULINO</Link> 
-                                <Link to='/home/INFANTIL' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Vips</Link>
+                                <Link to='/home/HOMENS' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0" onClick={toggleDiv}>HOMENS</Link>
+                                <Link to='/home/MULHERES' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>MULHERES</Link> 
+                                <Link to='/home/TRAVESTIS' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>TRAVESTIS</Link>
                                 <Link to="/anuncie" className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Anuncie</Link>
-                                <Link to='/home/NOVIDADES' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>NOVIDADES</Link>
+                                <Link to='/home/VIPS' className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>VIPS</Link>
                                 <Link to="/sobre" className="bg-pink-400 md:bg-white text-black btn w-40 hover:bg-hb mb-2 md:mb-0 " onClick={toggleDiv}>Sobre</Link>
                             </div>
                         </div>
