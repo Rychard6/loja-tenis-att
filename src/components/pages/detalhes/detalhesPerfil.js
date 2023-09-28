@@ -89,12 +89,12 @@ export default function CorpoDetalhes() {
                             <div className=" w-2/4 auto border-none rounded-bl-lg">
                                 <div className="whitespace-nowrap pt-4 pl-2 text-white">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">idade: </span>{product.idade}
+                                        <span className="text-pink-500 ">Idade: </span>{product.idade}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white border-none rounded-l-md">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">peso: </span>{product.peso}
+                                        <span className="text-pink-500 ">Peso: </span>{product.peso}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
@@ -109,7 +109,7 @@ export default function CorpoDetalhes() {
                                 </div>
                                 <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
                                     <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">Cidade: </span>{product.cidade}
+                                        <span className="text-pink-500 ">Loc: </span>{product.cidade}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
