@@ -3,7 +3,7 @@ import api from '../../../API/api';
 import Modal from 'react-responsive-modal';
 import { useParams } from 'react-router-dom';
 import 'react-responsive-modal/styles.css';
-import { IoCallOutline, IoLogoWhatsapp } from "react-icons/io5";
+import { IoCallOutline, IoLogoWhatsapp, IoFlameSharp } from "react-icons/io5";
 import Comentarios from './comentarios';
 
 export default function CorpoDetalhes() {
@@ -50,7 +50,6 @@ export default function CorpoDetalhes() {
         window.open(whatsappLink, '_blank');
     };
 
-
     return product.url ? (
         <>
             <div className='md:hidden'>
@@ -71,16 +70,32 @@ export default function CorpoDetalhes() {
 
             <div className='pt-8 md:pt-32 pl-2 md:pl-16'>
                 <div className="w-full pl-2 md:w-72 md:whitespace-nowrap h-auto border-b-4 border-pink-700 rounded-tl-lg">
-                    <h1 className="text-white text-lg pt-6"><strong>Produtoooo</strong></h1>
+                    <h1 className="text-white text-lg pt-6"><strong>Acompanhante</strong></h1>
                 </div>
-                <div className="w-full pl-2 pt-4 md:pl-4 text-white">
-                    <h1 className='text-3xl font-roboto font-medium'>{product.nome}, <span className='font-sans text-pink-600 '>{product.valor}</span> Reais</h1>
+                <div className="w-full pl-2 pt-4 md:pl-4 text-white grid grid-cols-2 gap-4">
+                    <div>
+                        <h1 className="text-3xl font-roboto font-medium">
+                            {product.nome}<span className="font-sans text-pink-600"></span>
+                        </h1>
+                        <div className='pt-10 flex items-center'>
+                            <IoFlameSharp className='text-pink-400 mr-2 text-xl' />
+                            <p className='text-pink-400 text-2xl'> {product.idade} aninhos</p>
+                        </div>
+                    </div>
+
+                    {/* Segunda Div com Círculo de Imagem */}
+                    <div className="flex items-center justify-center">
+                        <div className="w-32 h-32 rounded-full overflow-hidden">
+                            <img src={product.url[1]} className=''></img>
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div className=" md:block pt-8 md:pl-16 md:min-h-screen justify-center">
 
                 <div className="w-full pl-2 md:w-72 md:whitespace-nowrap h-auto border-b-4 border-pink-700 rounded-tl-lg">
-                    <h1 className="text-white text-lg md:pt-6"><strong>Detalhes do Produto</strong></h1>
+                    <h1 className="text-white text-lg md:pt-6"><strong>Detalhes do Perfil</strong></h1>
                 </div>
 
                 <div className="flex pt-8 md:justify-between w-full">
@@ -88,74 +103,74 @@ export default function CorpoDetalhes() {
                         <div className=" w-full h-auto flex justify-center items-center border-none rounded-bl-lg rounded-r-lg">
                             <div className=" w-2/4 auto border-none rounded-bl-lg">
                                 <div className="whitespace-nowrap pt-4 pl-2 text-white">
-                                    <h1 className="md:text-lg font-mono">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Idade: </span>{product.idade}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white border-none rounded-l-md">
-                                    <h1 className="md:text-lg font-mono">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Peso: </span>{product.peso}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">cel: </span>{product.telefone}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
-                                    <h1 className="md:text-lg font-mono">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Mora só: </span>{product.MoraSo}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 pl-2 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
+                                    <h1 className="md:text-lg font-mono font-serif ">
                                         <span className="text-pink-500 ">Loc: </span>{product.cidade}
                                     </h1>
                                 </div>
                                 <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 pl-2 text-white rounded-l-md">
-                                    <h1 className="md:text-lg font-mono">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Oral sem: </span>{product.oral}
                                     </h1>
                                 </div>
                                 <div className="whitespace-nowrap pt-4 pb-4 pl-2 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">Hr:</span>{product.horario}
+                                    <h1 className="md:text-lg font-mono font-serif">
+                                        <span className="text-pink-500 ">Hr: </span>{product.horario}
                                     </h1>
                                 </div>
                             </div>
                             <div className=" w-2/4 h-auto border-none rounded-r-lg">
-                                <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
-                                        <span className="text-pink-500 ">Valor: </span>{product.valor}
+                                <div className="whitespace-nowrap pl-10 pt-4 md:pl-4 text-white bg-">
+                                    <h1 className="md:text-lg font-mono font-serif">
+                                        <span className="text-pink-500 ">Valor: </span> R${product.valor},00
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
-                                    <h1 className="md:text-lg font-mono">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pl-10 pt-4 md:pl-4 text-white rounded-r-md">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Altura: </span>{product.altura}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
+                                <div className="whitespace-nowrap pl-10 pt-4 md:pl-4 text-white bg-">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Whatsapp: </span>{product.whatsapp}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
-                                    <h1 className="md:text-lg font-mono">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pl-10 pt-4 md:pl-4 text-white rounded-r-md">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Atende: </span>{product.atende}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 md:pl-4 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
+                                <div className="whitespace-nowrap pl-10 pt-4 md:pl-4 text-white bg-">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Beija: </span>{product.beija}
                                     </h1>
                                 </div>
-                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pt-4 md:pl-4 text-white rounded-r-md">
-                                    <h1 className="md:text-lg font-mono">
+                                <div style={{ backgroundColor: "#1e293b" }} className="whitespace-nowrap pl-10 pt-4 md:pl-4 text-white rounded-r-md">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Anal: </span>{product.anal}
                                     </h1>
                                 </div>
-                                <div className="whitespace-nowrap pt-4 pb-4 md:pl-4 text-white bg-">
-                                    <h1 className="md:text-lg font-mono">
+                                <div className="whitespace-nowrap pl-10 pt-4 pb-4 md:pl-4 text-white bg-">
+                                    <h1 className="md:text-lg font-mono font-serif">
                                         <span className="text-pink-500 ">Cartão: </span><span>{product.cartao}</span>
                                     </h1>
                                 </div>
@@ -212,7 +227,7 @@ export default function CorpoDetalhes() {
             </div>
             <div className="md:hidden">
                 <div className="w-full pl-2 md:w-72 md:whitespace-nowrap h-auto border-b-4 border-pink-700 rounded-tl-lg">
-                    <h1 className="text-white text-lg pl-4 pt-6 md:pt-6"><strong>fotos</strong></h1>
+                    <h1 className="text-white text-lg pl-4 pt-6 md:pt-6"><strong>Fotos</strong></h1>
                 </div>
                 <div className="grid grid-cols-1 gap-6 m-8">
                     {product.url.map((imagem, index) => (
