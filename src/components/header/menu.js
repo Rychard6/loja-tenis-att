@@ -9,7 +9,7 @@ export default function Menu() {
             <div className={`${isMobile ? 'flex items-center justify-center h-full' : 'flex items-center justify-center h-12'}`}>
                 <div className={`btn-group md:flex-row flex-col ${isMobile ? 'h-3/4 md:h-auto' : ''}`}>
                     <Link to='/home/all' className="btn w-40 hover:bg-hb mb-2 md:mb-0 ">Home</Link>
-                    <Link to='/home/HOMENS' className="btn w-40 hover:bg-hb mb-2 md:mb-0">Homens</Link>
+                    <Link to='/home/HOMENS' className="btn w-40 hover:bg-hb mb-2 md:mb-0">Ofertas</Link>
                     <Link to='/home/MULHERES' className="btn w-40 hover:bg-hb mb-2 md:mb-0 ">Mulheres</Link> 
                     <Link to='/home/TRAVESTIS' className="btn w-40 hover:bg-hb mb-2 md:mb-0 ">Travestis</Link>
                     <Link to="/anuncie" className="btn w-40 hover:bg-hb mb-2 md:mb-0 ">Anuncie</Link>
