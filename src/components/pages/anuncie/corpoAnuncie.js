@@ -38,7 +38,7 @@ export default function CorpoAnuncie() {
             style={{ backgroundColor: "rgba(115,53,76,0.35)" }}
             className="relative w-3/4 h-auto border rounded-md p-4"
           >
-            <h1 className="text-2xl font-bold text-center text-white">Como Anunciar</h1>
+            <h1 className="text-2xl font-bold text-center text-white">Quem somos?</h1>
             <ul className="text-white">
               <li className="pt-4 text-center">
                 1. Clique no botão <strong>Quero me cadastrar</strong> para ser redirecionado para o nosso
